@@ -11,5 +11,9 @@ $("#search-button").on("click", function () {
   }).then(function (response) {
     console.log(response);
     console.log("City name = " + response.name);
+    var pTag = $("<p>");
+    $("#city-list").prepend(pTag);
+    pTag.html(response.name);
+    
   });
 });
