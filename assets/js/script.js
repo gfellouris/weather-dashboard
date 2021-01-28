@@ -14,6 +14,8 @@ $("#search-button").on("click", function () {
     var pTag = $("<p>");
     $("#city-list").prepend(pTag);
     pTag.html(response.name);
-    
+
+    var cityTemp = (parseInt(response.main.temp) - 273.15) * 9/5 + 32;
+    $("#weather-details").html(cityTemp);
   });
 });
